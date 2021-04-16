@@ -73,6 +73,12 @@ public class Bike {
         return guarantee;
     }
 
+    public void setPrice(float price) {
+        this.price = price;
+    }
+    
+    
+
     @Override
     public String toString() {
          String text = "ID: " + id + "\n"

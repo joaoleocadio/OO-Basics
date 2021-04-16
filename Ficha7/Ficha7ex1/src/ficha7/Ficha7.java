@@ -40,16 +40,10 @@ public class Ficha7 {
         stand.addBike((Bike) bike2);
         stand.addBike((Bike) bike3);
         stand.addBike((Bike) bike4);
-        stand.addBike((Bike) bike5);
-        stand.addBike((Bike) bike6);
-        stand.addBike((Bike) bike7);
-        stand.addBike((Bike) bike8);
-        stand.addBike((Bike) bike9);
-        stand.addBike((Bike) bike10);
-        stand.addBike((Bike) bike11);
-        stand.addBike((Bike) bike12);
+        stand.editPrice(bike4, 110.69f);
+        stand.editPrice(bike1, 200.00f);
         
-        System.out.println(stand.printRoadBike());
+        System.out.println(stand.printMountainBike());
         
         /*
         bike1.addTool(Utensilios.ALFORJE);

@@ -94,6 +94,28 @@ public class BikeManagement {
         }
     }
     
+    public void editPrice(Bike bike, float price) {
+        int found = 0;
+        
+        if (bike == null) {
+            System.out.println("Bike inválida! ");
+        }
+        
+        for (int i = 0; i < this.countBikes; i++) {
+            if (this.lista[i].equals(bike)) {
+                lista[i].setPrice(price);
+                found++;
+                break;
+            }
+        }
+        
+        if (found > 0) {
+            System.out.println("Preço alterado com sucesso! ");
+        } else {
+            System.out.println("Impossível atualizar o preço!");
+        }
+    }
+    
     public String printMountainBike() {
         String text = "";
         
