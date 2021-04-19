@@ -38,6 +38,37 @@ public class Aluno extends Pessoa{
         return true;
     }
 
+    public void removeUcs(UnidadeCurricular uc) {
+        int[] positions = new int[MAX];
+        int found = 0;
+        
+        for (int i = 0; i < this.contUcs; i++) {
+            if (this.ucs[i].equals(uc)) {
+                positions[i] = 1;
+                found++;
+            }
+        }
+        
+        if (found > 0) {
+            UnidadeCurricular[] tmp = new UnidadeCurricular[MAX - found];
+            int tmpPosition = 0;
+            
+            for (int i = 0; i < positions.length; i++) {
+                if (positions[i] == 0) {
+                    tmp[tmpPosition] = ucs[i];
+                    tmpPosition++;
+                }
+            }
+            
+            this.ucs = tmp;
+            this.contUcs--;
+        } else {
+            System.out.println("Unidade Curricular não encontrada! ");
+        }
+        
+        
+    }
+    
     public String printUcs() {
         String text = "";
         

@@ -41,6 +41,26 @@ public class Pessoa {
         return NIF;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDataNasc(String dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+
+    public void setMorada(String morada) {
+        this.morada = morada;
+    }
+
+    public void setCC(int CC) {
+        this.CC = CC;
+    }
+
+    public void setNIF(int NIF) {
+        this.NIF = NIF;
+    }
+
     @Override
     public String toString() {
         String text = "";

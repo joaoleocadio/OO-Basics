@@ -8,7 +8,9 @@ import enums.Contrato;
  */
 public class Professor extends Pessoa{
     private static final int MAX = 5;
+    private static int nextId = 0; 
     
+    private int id;
     private String sigla;
     private Contrato contrato;
     private UnidadeCurricular[] ucs;
@@ -19,8 +21,14 @@ public class Professor extends Pessoa{
         this.sigla = sigla;
         this.contrato = contrato;
         this.ucs = new UnidadeCurricular[MAX];
+        this.id = ++nextId;
     }
 
+    public int getId() {
+        return id;
+    }
+   
+    
     public String getSigla() {
         return sigla;
     }
@@ -70,9 +78,29 @@ public class Professor extends Pessoa{
             this.contUcs--;
         } else {
             System.out.println("Unidade curricular não encontrada! ");
+        }      
+    }
+    
+    public void editUcs(UnidadeCurricular uc, UnidadeCurricular novaUc) {
+        int found = 0;
+        
+        if (uc == null || novaUc == null) {
+            System.out.println("Observações Inválidas! ");
         }
         
+        for (int i = 0; i < this.contUcs; i++) {
+            if (this.ucs[i].equals(uc)) {
+                ucs[i] = novaUc;
+                found++;
+                break;
+            }
+        }
         
+        if (found > 0) {
+            System.out.println("Unidade Curricular alterada com sucesso! ");
+        } else {
+            System.out.println("Unidade Curricular não encontrada! ");
+        }
     }
     
     public String printUcs() {
@@ -95,6 +123,4 @@ public class Professor extends Pessoa{
         text += "Sigla: " + sigla + "\n" + "Contrato: " + contrato + "\n";
         return text;
     }
-    
-    
 }
