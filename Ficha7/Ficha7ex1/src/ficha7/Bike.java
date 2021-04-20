@@ -19,6 +19,16 @@ public class Bike {
     private float price;
     private int guarantee;
 
+    /**
+     * Construtor para o bicicleta com o id a incrementar automaticamente
+     * @param numberOfGears
+     * @param color
+     * @param wheelSize
+     * @param travoes
+     * @param material
+     * @param price
+     * @param guarantee
+     */
     public Bike(int numberOfGears, String color, float wheelSize, Travoes travoes, Material material, float price, int guarantee) {
         this.id = ++nextId;
         this.numberOfGears = numberOfGears;
@@ -30,6 +40,15 @@ public class Bike {
         this.guarantee = guarantee;
     }
 
+    /**
+     * Construtor para o bicicleta com o id a incrementar automaticamente
+     * Travões hidraulicos e material carbono por omissão
+     * @param numberOfGears
+     * @param color
+     * @param wheelSize
+     * @param price
+     * @param guarantee
+     */
     public Bike(int numberOfGears, String color, float wheelSize, float price, int guarantee) {
         this.id = ++nextId;
         this.numberOfGears = numberOfGears;
@@ -41,44 +60,82 @@ public class Bike {
         this.material = Material.CARBONO;
     }
 
+    /**
+     * getter para o id
+     * @return id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * getter para o numero de velocidades
+     * @return numberOfGears
+     */
     public int getNumberOfGears() {
         return numberOfGears;
     }
 
+    /**
+     * getter para a cor da bike
+     * @return cor
+     */
     public String getColor() {
         return color;
     }
 
+    /**
+     * getter para o tamanho das rodas
+     * @return tamanho das rodas
+     */
     public float getWheelSize() {
         return wheelSize;
     }
 
+    /**
+     * getter para os travões
+     * @return travões
+     */
     public Travoes getTravoes() {
         return travoes;
     }
 
+    /**
+     * getter para o material
+     * @return material
+     */
     public Material getMaterial() {
         return material;
     }
 
+    /**
+     * getter para o preço
+     * @return preço
+     */
     public float getPrice() {
         return price;
     }
 
+    /**
+     * getter para a garantia
+     * @return garantia
+     */
     public int getGuarantee() {
         return guarantee;
     }
 
+    /**
+     * setter para o preço
+     * @param price
+     */
     public void setPrice(float price) {
         this.price = price;
     }
     
-    
-
+    /**
+     * Método toString para a impressão dos atributos de uma bike
+     * @return
+     */
     @Override
     public String toString() {
          String text = "ID: " + id + "\n"

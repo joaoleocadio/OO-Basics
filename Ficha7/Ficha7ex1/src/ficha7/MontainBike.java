@@ -18,6 +18,18 @@ public class MontainBike extends Bike {
     private Utensilios[] utensilos;
     private int contTools = 0;
 
+    /**
+     * Método construtor de uma montainBike
+     * @param numberOfLights
+     * @param suspensao
+     * @param numberOfGears
+     * @param color
+     * @param wheelSize
+     * @param travoes
+     * @param material
+     * @param price
+     * @param guarantee
+     */
     public MontainBike(int numberOfLights, Suspensao suspensao, int numberOfGears, String color, float wheelSize, Travoes travoes, Material material, float price, int guarantee) {
         super(numberOfGears, color, wheelSize, travoes, material, price, guarantee);
         this.numberOfLights = numberOfLights;
@@ -25,7 +37,11 @@ public class MontainBike extends Bike {
         this.utensilos = new Utensilios[MAX];
     }
 
-    
+    /**
+     * Método que permite adicionar uma ferramenta
+     * @param tool
+     * @return true or false
+     */
     public boolean addTool(Utensilios tool) {
         if (tool == null) return false;
         
@@ -42,6 +58,10 @@ public class MontainBike extends Bike {
         return true;
     }
     
+    /**
+     * Método que permite remover uma ferramenta
+     * @param tool
+     */
     public void removeTool(Utensilios tool) {
         int[] positions = new int[MAX];
         int found = 0;
@@ -72,6 +92,12 @@ public class MontainBike extends Bike {
     }
     
     // tentar fazer com for each
+
+    /**
+     * Método que permite editar uma ferramenta
+     * @param tool
+     * @param editar
+     */
     public void editTools(Utensilios tool, Utensilios editar) {
         int found = 0;
         
@@ -94,6 +120,10 @@ public class MontainBike extends Bike {
         }
     }
     
+    /**
+     * Método que permite imprimir todas as ferramentas de uma montainBike
+     * @return
+     */
     public String printTool() {
         String text = "";
         
@@ -114,7 +144,5 @@ public class MontainBike extends Bike {
         
         return text;
     }
-    
-    
-    
+  
 }

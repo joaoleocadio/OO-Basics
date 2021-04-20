@@ -42,8 +42,9 @@ public class Ficha7 {
         stand.addBike((Bike) bike4);
         stand.editPrice(bike4, 110.69f);
         stand.editPrice(bike1, 200.00f);
+        stand.addBike((Bike) bike5);
         
-        System.out.println(stand.printMountainBike());
+        System.out.println(stand.searchColor("Azul"));
         
         /*
         bike1.addTool(Utensilios.ALFORJE);

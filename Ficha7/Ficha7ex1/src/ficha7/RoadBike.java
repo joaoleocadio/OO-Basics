@@ -16,6 +16,18 @@ public class RoadBike extends Bike {
     private String[] observations = new String[MAX];
     private int countObs = 0;
 
+    /**
+     * Método construtor para uma road bike com o id a incrementar automaticamente
+     * @param handlebelt
+     * @param frameSize
+     * @param numberOfGears
+     * @param color
+     * @param wheelSize
+     * @param travoes
+     * @param material
+     * @param price
+     * @param guarantee
+     */
     public RoadBike(boolean handlebelt, float frameSize, int numberOfGears, String color, float wheelSize, Travoes travoes, Material material, float price, int guarantee) {
         super(numberOfGears, color, wheelSize, travoes, material, price, guarantee);
         this.handlebelt = handlebelt;
@@ -24,6 +36,17 @@ public class RoadBike extends Bike {
 
     }
 
+    /**
+     * Construtor de uma road bike com o id a incrementar automaticamente
+     * Travões hidraulicos e material carbono por omissão
+     * @param handlebelt
+     * @param frameSize
+     * @param numberOfGears
+     * @param color
+     * @param wheelSize
+     * @param price
+     * @param guarantee
+     */
     public RoadBike(boolean handlebelt, float frameSize, int numberOfGears, String color, float wheelSize, float price, int guarantee) {
         super(numberOfGears, color, wheelSize, price, guarantee);
         this.handlebelt = handlebelt;
@@ -31,6 +54,11 @@ public class RoadBike extends Bike {
         this.observations = new String[MAX];
     }
 
+    /**
+     * Método que permite adicionar uma observação ao array
+     * @param text
+     * @return
+     */
     public boolean addObservation(String text) {
         if (text == null) return false;
         
@@ -45,6 +73,10 @@ public class RoadBike extends Bike {
         return true;
     }
     
+    /**
+     * Método que permite remover uma observação ao array
+     * @param text
+     */
     public void removeObs(String text) {
         int[] positions = new int[MAX];
         int found = 0;
@@ -75,6 +107,11 @@ public class RoadBike extends Bike {
         }
     }
     
+    /**
+     * Método que permite editar uma observação do array
+     * @param text
+     * @param editar
+     */
     public void editObs(String text, String editar) {
         int found = 0;
         
@@ -101,6 +138,10 @@ public class RoadBike extends Bike {
         }
     }
     
+    /**
+     * Método que permite imprimir todas as observações associadas a uma roadBike
+     * @return
+     */
     public String printObs() {
         String text = "";
         

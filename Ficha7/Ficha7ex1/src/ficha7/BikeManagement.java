@@ -10,6 +10,11 @@ public class BikeManagement {
     private Bike[] lista = new Bike[MAX_BIKES];
     private int countBikes = 0;
     
+    /**
+     * Método que permite adicionar bikes à lista
+     * @param bike
+     * @return true
+     */
     public boolean addBike(Bike bike) {
         if (bike == null) return false;
         
@@ -35,7 +40,10 @@ public class BikeManagement {
         return true;
     }
     
-    
+    /**
+     * Método que permite remover bikes da lista
+     * @param bike
+     */
     public void removeBike(Bike bike) {
         int[] positions = new int[MAX_BIKES];
         int found = 0;
@@ -65,6 +73,10 @@ public class BikeManagement {
         }
     }
     
+    /**
+     * Método que permite remover bikes da lista por id
+     * @param id
+     */
     public void removeBike(int id) {
         int[] positions = new int[MAX_BIKES];
         int found = 0;
@@ -94,6 +106,11 @@ public class BikeManagement {
         }
     }
     
+    /**
+     * Método que permite alterar o preço de uma determinada bike
+     * @param bike
+     * @param price
+     */
     public void editPrice(Bike bike, float price) {
         int found = 0;
         
@@ -116,6 +133,27 @@ public class BikeManagement {
         }
     }
     
+    /**
+     * Método que permite procurar bikes por cores
+     * @param cor
+     * @return text
+     */
+    public String searchColor(String cor) {
+        String text = "";
+        
+        for (int i = 0; i < countBikes; i++) {
+            if (this.lista[i].getColor().equals(cor)) {
+                text += "###### Bicicletas de cor " + cor.toUpperCase() + " ######\n";
+                text += lista[i].toString() + "\n";
+            }
+        }
+        return text;
+    }
+    
+    /**
+     * Método que permite imprimir todas as bikes de montanha
+     * @return text
+     */
     public String printMountainBike() {
         String text = "";
         
@@ -128,6 +166,10 @@ public class BikeManagement {
         return text;
     }
     
+    /**
+     * Método que permite imprimir todas as bikes de estrada
+     * @return
+     */
     public String printRoadBike() {
         String text = "";
         
@@ -140,6 +182,10 @@ public class BikeManagement {
         return text;
     }
     
+    /**
+     * Método que permite imprimir todas as bikes da lista
+     * @return
+     */
     public String printAllBikes() {
         String text = "";
         
