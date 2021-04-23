@@ -37,7 +37,7 @@ public class Automovel extends Vehicle{
         int preco = 0, desconto = 0;
         
         if (this.getCondicao().equals(Condicao.NOVO)) {
-            preco = super.getPrice(); 
+            preco = this.getPrice(); 
         } else if (this.getCondicao().equals(Condicao.USADO)) {
             desconto = (int) (0.30 * super.getPrice());
             preco = (int) super.getPrice() - desconto;
@@ -55,5 +55,32 @@ public class Automovel extends Vehicle{
         
         return text;
     }
-     
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        
+        if (obj == null) {
+            return false;
+        }
+        
+        if (!(obj instanceof Automovel)) {
+            return false;
+        }
+        
+        Automovel tmpAutomovel = (Automovel) obj;
+        if (!(this.getId() == tmpAutomovel.getId())) {
+            return false;
+        }
+
+        return true;
+    }   
 }

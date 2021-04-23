@@ -33,8 +33,34 @@ public class Trailler {
     public String toString() {
         String text = "";
         
-        text += "ID: " + this.id + "\n" + "Nº de Eixos: " + this.numEixos + "\n" + "Capacidade: " + this.capacidade + "\n";
+        text += "ID do trailler: " + this.id + "\n" + "Nº de Eixos: " + this.numEixos + "\n" + "Capacidade: " + this.capacidade + "\n";
         
         return text;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        boolean equal = false;
+        Trailler temp = (Trailler) obj;
+        
+        if (temp.id == this.id) {
+            if (temp.capacidade == this.capacidade) {
+                if (temp.numEixos == this.numEixos) {
+                    equal = true;
+                }
+            }
+        }
+
+        return equal;
+    }  
 }

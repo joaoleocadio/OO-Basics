@@ -2,6 +2,7 @@ package ficha8;
 
 import enums.Condicao;
 import enums.Origem;
+import java.util.Objects;
 
 /**
  *
@@ -71,8 +72,44 @@ public class Vehicle {
     public void setPrice(int price) {
         this.price = price;
     }
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Vehicle)) {
+            return false;
+        }
+        
+        boolean equal = false;
+        Vehicle tmp = (Vehicle) obj;
+        
+        if (tmp.getId() == this.id) {
+            if (tmp.getChassis() == this.chassis) {
+                if (tmp.getCondicao().equals(this.condicao)) {
+                    if (tmp.getNumKM() == this.numKM) {
+                        if (tmp.getPrice() == this.price) {
+                            if (tmp.getMarca().equals(this.marca)) {
+                                equal = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return equal;
+    }
 
     @Override
     public String toString() {
