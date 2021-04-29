@@ -17,14 +17,26 @@ public class Motociclo extends Vehicle{
         this.tamanhoRodas = tamanhoRodas;
     }
 
+    /**
+     * Getter para a colindrada de um motociclo
+     * @return 
+     */
     public int getCilindrada() {
         return cilindrada;
     }
 
+    /**
+     * Getter para o tamanho das rodas
+     * @return 
+     */
     public float getTamanhoRodas() {
         return tamanhoRodas;
     }
 
+    /**
+     * Método toString() para a impressão de um motociclo 
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";
@@ -34,6 +46,11 @@ public class Motociclo extends Vehicle{
         return text;
     }
 
+    /**
+     * Método equals para comparação do objeto Motociclo
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

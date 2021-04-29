@@ -24,14 +24,26 @@ public class Automovel extends Vehicle{
         this.numPortas = numPortas;
     }  
 
+    /**
+     * Getter para o número de ocupantes
+     * @return 
+     */
     public int getNumOcupantes() {
         return numOcupantes;
     }
 
+    /**
+     * Getter para o nº de portas
+     * @return 
+     */
     public int getNumPortas() {
         return numPortas;
     }
 
+    /**
+     * Método reescrito do preço
+     * @return 
+     */
     @Override
     public int getPrice() {
         int preco = 0, desconto = 0;
@@ -46,6 +58,10 @@ public class Automovel extends Vehicle{
         return preco;
     }
 
+    /**
+     * Método toString()
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";
@@ -62,6 +78,11 @@ public class Automovel extends Vehicle{
         return hash;
     }
 
+    /**
+     * Método equals para comparação do objeto Automóvel
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

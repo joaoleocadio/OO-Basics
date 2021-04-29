@@ -14,6 +14,11 @@ public class VehicleManagement {
     private Vehicle[] lista = new Vehicle[MAX];
     private int countVehicles = 0;
     
+    /**
+     * Método que permite adicionar um veículo à lista
+     * @param veiculo
+     * @return 
+     */
     public boolean addVehicle(Vehicle veiculo) {
         if (veiculo == null) return false;
         
@@ -40,6 +45,11 @@ public class VehicleManagement {
         return true;
     }
     
+    /**
+     * Método privado que permite encontrar um veiculo através do seu ID
+     * @param id
+     * @return posição do veiculo caso encontre
+     */
     private int find(int id) {
         int pos = -1;
         int i = 0;
@@ -54,6 +64,10 @@ public class VehicleManagement {
         return pos;
     }
     
+    /**
+     * Método que permite remover um veículo
+     * @param veiculo 
+     */
     public void removeVehicle(Vehicle veiculo) {
         int[] positions = new int[MAX];
         int found = 0;
@@ -88,6 +102,10 @@ public class VehicleManagement {
         }     
     }
     
+    /**
+     * Método que permite remover um veículo
+     * @param id 
+     */
     public void removeVehicle(int id) {
         int[] positions = new int[MAX];
         int found = 0;
@@ -117,6 +135,11 @@ public class VehicleManagement {
         }
     }
     
+    /**
+     * Método que permite editar o preço de um determinado veículo
+     * @param veiculo
+     * @param price 
+     */
     public void editPrice(Vehicle veiculo, int price) {
         int found = 0;
         
@@ -143,6 +166,10 @@ public class VehicleManagement {
         }
     }
     
+    /**
+     * Impressão de todos os Automóveis
+     * @return 
+     */
     public String printAutomoveis() {
         String text = "";
         
@@ -155,6 +182,10 @@ public class VehicleManagement {
         return text;       
     }
     
+    /**
+     * Impressão de todos os Pesados
+     * @return 
+     */
     public String printPesados() {
         String text = "";
         
@@ -167,6 +198,10 @@ public class VehicleManagement {
         return text;       
     }
     
+    /**
+     * Impressão de todos os Motociclos
+     * @return 
+     */
     public String printMotociclos() {
         String text = "";
         
@@ -179,6 +214,10 @@ public class VehicleManagement {
         return text;       
     }
 
+    /**
+     * Impressão de todos os Veículos
+     * @return 
+     */
     public String printAllVehicles() {
         String text = "";
         
@@ -190,6 +229,11 @@ public class VehicleManagement {
         return text;
     }  
     
+    /**
+     * Método que permite contar Pesados de um determinado tipo
+     * @param tipo
+     * @return 
+     */
     public String contForTipo(TruckType tipo) {
         int cont = 0;
         String text = "";

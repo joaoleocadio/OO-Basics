@@ -15,11 +15,18 @@ public class Reboque extends Trailler{
         this.tipologia = tipologia;
     }
 
+    /**
+     * Getter para a tipologia do reboque
+     * @return 
+     */
     public Tipologia getTipologia() {
         return tipologia;
     }
     
-
+    /**
+     * Método toString() para a impressão de um reboque, utilizando também os atributos herdados
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";
@@ -30,6 +37,11 @@ public class Reboque extends Trailler{
         return text;
     }
 
+    /**
+     * Método equals para a comparação do objeto reboque
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -52,8 +64,5 @@ public class Reboque extends Trailler{
         }
         
         return true;
-    }
-
-    
-    
+    }  
 }

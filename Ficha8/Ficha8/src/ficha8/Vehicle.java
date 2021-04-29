@@ -21,6 +21,18 @@ public class Vehicle {
     private Condicao condicao;
     private int price;
 
+    
+    /**
+     * Método construtor para um veículo
+     * @param chassis
+     * @param marca
+     * @param modelo
+     * @param dataFabrico
+     * @param origem
+     * @param numKM
+     * @param condicao
+     * @param price 
+     */
     public Vehicle(int chassis, String marca, String modelo, String dataFabrico, Origem origem, int numKM, Condicao condicao, int price) {
         this.id = ++nextId;
         this.chassis = chassis;
@@ -33,42 +45,83 @@ public class Vehicle {
         this.price = price;
     }
 
+    /**
+     * Getter para o ID
+     * @return 
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Getter para o nº de chassis
+     * @return 
+     */
     public int getChassis() {
         return chassis;
     }
 
+    /**
+     * Getter para a marca
+     * @return 
+     */
     public String getMarca() {
         return marca;
     }
 
+    /**
+     * Getter para o modelo
+     * @return 
+     */
     public String getModelo() {
         return modelo;
     }
 
+    /**
+     * Getter para a data
+     * @return 
+     */
     public String getDataFabrico() {
         return dataFabrico;
     }
 
+    /**
+     * Getter para o origem
+     * @return 
+     */
     public Origem getOrigem() {
         return origem;
     }
 
+    /**
+     * Getter para o nº de Km
+     * @return 
+     */
     public int getNumKM() {
         return numKM;
     }
 
+    /**
+     * Getter para a condição dos veiculos
+     * @return 
+     */
     public Condicao getCondicao() {
         return this.condicao;
     }
 
+    
+    /**
+     * Getter para o preço
+     * @return 
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     * Setter para o preço
+     * @param price 
+     */
     public void setPrice(int price) {
         this.price = price;
     }
@@ -79,6 +132,11 @@ public class Vehicle {
         return hash;
     }
 
+    /**
+     * Método equals para comparação do objeto Vehicle
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -111,6 +169,10 @@ public class Vehicle {
         return equal;
     }
 
+    /**
+     * Método toString()
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";

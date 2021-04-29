@@ -17,18 +17,34 @@ public class Trailler {
         this.capacidade = capacidade;
     }
 
+    /**
+     * Getter para o ID
+     * @return 
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Getter para o nº de eixos
+     * @return 
+     */
     public int getNumEixos() {
         return numEixos;
     }
 
+    /**
+     * Getter para a capacidade
+     * @return 
+     */
     public int getCapacidade() {
         return capacidade;
     }
 
+    /**
+     * Método toString() para o trailler (super classe)
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";
@@ -38,6 +54,11 @@ public class Trailler {
         return text;
     }
 
+    /**
+     * Método equals para a comparação do objeto trailler
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
