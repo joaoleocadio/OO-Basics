@@ -35,10 +35,24 @@ public abstract class Shape {
         this.filled = filled;
     }
     
+    /**
+     * Método abstrato para o cálculo da área
+     * Terá que ser obrigatoriamente implementado nas sub-classes
+     * @return 
+     */
     public abstract double getArea();
     
+    /**
+     * Método abstrato para o cálculo do perímetro
+     * Terá que ser obrigatoriamente implementado nas sub-classes
+     * @return 
+     */
     public abstract double getPerimeter();
 
+    /**
+     * Método toString()
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";
@@ -47,6 +61,11 @@ public abstract class Shape {
         return text;
     }
 
+    /**
+     * Método equals
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

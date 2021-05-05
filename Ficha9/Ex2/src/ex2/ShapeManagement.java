@@ -10,6 +10,11 @@ public class ShapeManagement {
     private Shape[] lista = new Shape[MAX];
     private int contShapes = 0;
     
+    /**
+     * Método que permite adicionar uma forma
+     * @param shape
+     * @return 
+     */
     public boolean addShape(Shape shape) {
         if (shape == null) return false;
         
@@ -33,6 +38,10 @@ public class ShapeManagement {
         return true;
     }
     
+    /**
+     * Método que permite remover uma forma
+     * @param shape 
+     */
     public void removeShapes(Shape shape) {
         int[] positions = new int[MAX];
         int found = 0;
@@ -62,6 +71,10 @@ public class ShapeManagement {
         }
     }
     
+    /**
+     * Método que permite listar todas as formas presentes no array
+     * @return 
+     */
     public String printAllShapes() {
         String text = "";
         
@@ -73,6 +86,10 @@ public class ShapeManagement {
         return text;
     }
     
+    /**
+     * Método que permite listar todos os circulos existentes no array de formas
+     * @return 
+     */
     public String printCircles() {
         String text = "";
         
@@ -85,6 +102,10 @@ public class ShapeManagement {
         return text;
     }
     
+    /**
+     * Método que permite listar todos os retangulos existentes no array de formas
+     * @return 
+     */
     public String printRetangle() {
         String text = "";
         
@@ -97,6 +118,10 @@ public class ShapeManagement {
         return text;
     }
     
+    /**
+     * Método que permite listar todos os Quadrados existentes no array de formas
+     * @return 
+     */
     public String printSquare() {
         String text = "";
         
@@ -107,6 +132,5 @@ public class ShapeManagement {
             }
         }
         return text;
-    }
-    
+    }  
 }

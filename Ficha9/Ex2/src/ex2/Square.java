@@ -31,6 +31,10 @@ public class Square extends Shape{
     }
     
     
+    /**
+     * Método reescrito para o área (deriva da superclasse) 
+     * @return 
+     */
     @Override
     public double getArea() {
         double area = 0;
@@ -40,6 +44,10 @@ public class Square extends Shape{
         return area;
     }
 
+    /**
+     * Método reescrito para o perímetro (deriva da superclasse)
+     * @return 
+     */
     @Override
     public double getPerimeter() {
         double perimetro = 0;
@@ -49,6 +57,10 @@ public class Square extends Shape{
         return perimetro;
     }
 
+    /**
+     * Método toString()
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";
@@ -59,6 +71,11 @@ public class Square extends Shape{
         return text;
     }
 
+    /**
+     * Método equals
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

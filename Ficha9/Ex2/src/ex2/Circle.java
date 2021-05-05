@@ -33,6 +33,10 @@ public class Circle extends Shape{
         this.radius = radius;
     } 
     
+    /**
+     * Método reescrito para a área (deriva da superclasse)
+     * @return 
+     */
     @Override
     public double getArea() {
         double area = 0.0;
@@ -42,6 +46,10 @@ public class Circle extends Shape{
         return area;
     }
 
+    /**
+     * Método reescrito para o perímetro (deriva da superclasse)
+     * @return 
+     */
     @Override
     public double getPerimeter() {
         double perimetro = 0.0;
@@ -51,6 +59,10 @@ public class Circle extends Shape{
         return perimetro;
     }
 
+    /**
+     * Método toString()
+     * @return 
+     */
     @Override
     public String toString() {
         String text = "";
@@ -61,6 +73,11 @@ public class Circle extends Shape{
         return text;
     }
 
+    /**
+     * Método equals
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
