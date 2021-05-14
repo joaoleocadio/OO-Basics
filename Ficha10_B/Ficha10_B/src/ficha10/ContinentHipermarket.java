@@ -16,8 +16,8 @@ public class ContinentHipermarket extends HiperMarket{
     public int getPoints(double purchaseValue) {
         Calendar c = Calendar.getInstance();
         
-        double menor20 = ((1 * purchaseValue) / 5);
-        double maior21 = ((3 * purchaseValue) / 20);
+        double menor20 = (int)(purchaseValue / 5);
+        double maior21 = (int)3*(purchaseValue / 20);
 
         System.out.print("Pontos Atribuídos: ");
         

@@ -24,15 +24,17 @@ public class Ficha10 {
         System.out.println(sp1.getMarketTotal(100));
         
         JumbHipermarket jumbo = new JumbHipermarket(0.55, 0.29, 1.10, 0.10, "Jumbo", 0213);
-        System.out.println(jumbo.getPoints(20));
+        System.out.println(jumbo.getPoints(25.32));
         
         ContinentHipermarket continente = new ContinentHipermarket(0.62, 0.28, 1.09, 0.05, "Continente", 2340);
         System.out.println(continente.getPoints(25.32));
         
         HiperMarket hm1 = new HiperMarket(0.35, 0.32, 1.10, 0.12, "ertsed", 2340);
-        hm1.verificarPontos(100, jumbo, continente);
+         
         
         GasStation[] bombas = {g1, lg1};
+
+        //GasStation bestHiperMarket = HiperMarket.verificarGasolina(bombas);
         
         hm1.verificarGasolina(bombas);
         

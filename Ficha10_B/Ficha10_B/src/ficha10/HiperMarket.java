@@ -179,9 +179,16 @@ public class HiperMarket extends Company implements HipermarketService {
         }
     }
     
-    public void verificarGasolina(GasStation[] bombas) {
+    public static void verificarGasolina(GasStation[] bombas) {
         double menor = 2.0;
         String nome = "";
+        
+        /*
+        for (GasStation gs : bombas) {
+            if (gs != null && menor > gs.getGasPrice()) {
+                menor = gs.getGasPrice();
+            }
+        }*/
         
         for (int i = 0; i < bombas.length; i++) {
             if (menor >= bombas[i].getGasPrice()) {

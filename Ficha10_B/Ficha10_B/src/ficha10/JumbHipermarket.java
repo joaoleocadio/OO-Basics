@@ -17,24 +17,23 @@ public class JumbHipermarket extends HiperMarket{
     public int getPoints(double purchaseValue) {
         Calendar c = Calendar.getInstance();
         
-        double pontosSemana = (3 * purchaseValue) / 10;
-        double pontosFimSemana = (1 * purchaseValue) / 10;
+        double pontosFimSemana = (int)(purchaseValue / 10);
         
         System.out.print("Pontos Atribuídos: ");
         
         switch (c.get(Calendar.DAY_OF_WEEK)) {
             case Calendar.MONDAY:
-                return (int) pontosSemana;
+                return (int) pontosFimSemana * 3;
             case Calendar.TUESDAY:
-                return (int) pontosSemana;
+                return (int) pontosFimSemana * 3;
             case Calendar.WEDNESDAY:
-                return (int) pontosSemana;
+                return (int) pontosFimSemana * 3;
             case Calendar.THURSDAY:
-                return (int) pontosSemana;
+                return (int) pontosFimSemana * 3;
             case Calendar.FRIDAY:
-                return (int) pontosSemana;
+                return (int) pontosFimSemana * 3;
             default:
-                return (int) pontosFimSemana;
+                return (int) (pontosFimSemana);
         }
     }
     

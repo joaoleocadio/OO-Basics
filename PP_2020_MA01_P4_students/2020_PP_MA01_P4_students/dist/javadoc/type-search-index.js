@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"library","l":"CitationStyle"},{"p":"library","l":"concretReference"},{"p":"library","l":"Library"},{"p":"ma01","l":"Main"},{"p":"library","l":"Reference"},{"p":"library","l":"ReferenceManagemente"}]
