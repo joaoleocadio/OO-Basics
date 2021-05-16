@@ -37,11 +37,11 @@ public class Main {
         concretReference c2 = new concretReference(CitationStyle.APA, "asd", "referencia 2", 1995, author1);
         
         ReferenceManagemente lista = new ReferenceManagemente();
-        lista.add(c1);
+        System.out.println(lista.add(c1));
         lista.add(c2);
         //lista.printAll();
-        //lista.printAll(CitationStyle.IEEE);
         lista.getNumberOfReferencesByAuthor("jose");
+        //lista.printAll();
     }
     
 }

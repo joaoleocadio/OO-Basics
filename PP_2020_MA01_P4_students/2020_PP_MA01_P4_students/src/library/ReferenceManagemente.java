@@ -68,7 +68,7 @@ public class ReferenceManagemente implements Library{
                         break;
                     }
                 }
-            }          
+            }      
         }
             
         System.out.println("O author: " + author.toUpperCase(Locale.ITALY) + " tem " + num + " referencias!");
