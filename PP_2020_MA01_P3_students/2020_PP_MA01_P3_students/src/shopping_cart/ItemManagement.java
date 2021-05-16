@@ -40,11 +40,12 @@ public class ItemManagement implements Cart{
      */
     @Override
     public boolean add(Item item) {
+        int pos = find(item.getReference());
         if (item == null) return false;
         
         if (cont >= MAX) return false;
         
-        if (find(item.getReference()) != -1){       
+        if (pos != -1){       
             item.setQuantity(item.getQuantity() + 1);
         } else {
             lista[cont++] = item; 
@@ -65,15 +66,14 @@ public class ItemManagement implements Cart{
         
         if (pos != -1) {
             for (int i = pos; i < this.cont; i++) {
-                if (lista[i].getQuantity() > 0) {
+                if (lista[i].getQuantity() > 1) {
                     lista[i].setQuantity(lista[i].getQuantity() - 1);
-                } 
-                
-                if (lista[i].getQuantity() == 0) {
-                    lista[i] = lista[i+1];  
+                    break;
+                } else if (lista[i].getQuantity() == 1) {
+                    lista[i] = lista[i+1]; 
                     lista[--cont] = null;
-                }                
-            }
+                }              
+            }           
         }
         return true;
     }
@@ -159,7 +159,7 @@ public class ItemManagement implements Cart{
         
         System.out.println("****** Fatura Descriminada *******");
         printAll();
-        System.out.println("Valor a total pagar: " + valor +" €");
+        System.out.printf("Valor a total pagar: %.2f €\n", valor);
         return valor;
     }   
 }

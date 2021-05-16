@@ -38,8 +38,7 @@ public class Main {
         lista.add(item1);
         lista.add(item2);
         lista.changePrice("test1", 0.70);
-        //lista.removeUnit("test1");
-        //lista.removeUnit("test1");
+        lista.removeUnit("aaa");
         lista.numberOfItems();
         lista.valorPagar();
     }
