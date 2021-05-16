@@ -52,18 +52,18 @@ public class BookManagement implements ReadingList{
      */
     @Override
     public boolean add(Book book) {
-        boolean test = false;
+        int pos = find(book.getISBN());
         
-        if (book == null) return test;
+        if (book == null) return false;
         
-        if (find(book.getISBN()) != -1) return test;
+        if (pos != -1) return false;
         
-        if (contBook >= MAX) return test;
+        if (contBook >= MAX) return false;
         
         if (book.getStatus().equals(BookStatus.WANT_TO_READ)) {
             lista[contBook++] = book;
         }   
-        return test;
+        return true;
     }
 
     /**
@@ -91,15 +91,33 @@ public class BookManagement implements ReadingList{
      */
     @Override
     public boolean remove(String isbn) {
-        int position = find(isbn);
+        int[] position = new int[MAX];
+        int found = 0;
         
-        if (position != -1) {
-            for (int i = position; i < contBook; i++) {
-                lista[i] = lista[i+1];
+        for (int i = 0; i < contBook; i++) {
+            if (this.lista[i].getISBN().equals(isbn) && this.lista[i].getStatus().equals(BookStatus.READ)) {
+                position[i] = 1;
+                found++;
             }
-            lista[--contBook] = null;
         }
+        
+        if (found > 0) {
+            Book[] tmp = new Book[MAX - found];
+            int tmpPosition = 0;
+            
+            for (int i = 0; i < position.length; i++) {
+                if (position[i] == 0) {
+                    tmp[tmpPosition] = lista[i];
+                    tmpPosition++;
+                }
+            }
+            
+            this.lista = tmp;
+            this.contBook--;
+            
+        } 
         return true;
+        
     }
 
     /**
@@ -130,7 +148,7 @@ public class BookManagement implements ReadingList{
     @Override
     public int getNumberOfBooks() {    
         
-        System.out.print("Número de livros disponíveis: ");
+        System.out.print("Número de livros disponíveis: " + contBook + "\n");
 
         return this.contBook;
     }

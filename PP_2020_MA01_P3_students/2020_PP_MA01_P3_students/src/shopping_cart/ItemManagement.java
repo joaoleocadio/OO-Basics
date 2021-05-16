@@ -161,6 +161,5 @@ public class ItemManagement implements Cart{
         printAll();
         System.out.println("Valor a total pagar: " + valor +" €");
         return valor;
-    }
-    
+    }   
 }

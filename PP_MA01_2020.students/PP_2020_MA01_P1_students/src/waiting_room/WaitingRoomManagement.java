@@ -13,7 +13,14 @@ public class WaitingRoomManagement implements waiting_room.WaitingRoom{
         this.registos = new Registration[MAX];
         this.cont = 0;
     }
-    
+
+    /**
+     * Método construtor que permite definir o tamanho máximo da sala de espera
+     * @param size 
+     */
+    public WaitingRoomManagement(int size) {
+        this.registos = new Registration[size];
+    }
     
     @Override
     public Registration getRegistration(String ssn) {
@@ -30,39 +37,33 @@ public class WaitingRoomManagement implements waiting_room.WaitingRoom{
     public int getFreeSeats() {
         int num = 0;
         
-        System.out.print("Número de lugares vazios na sala de espera: ");
         num = MAX - cont;
+        System.out.print("Número de lugares vazios na sala de espera: " + num + "\n");
         return num;
     }
 
-    private int find(String ssn) {
-        
+    private int find(String ssn) {      
         int pos = -1;
-        int i = 0;
         
-        while (i < cont && pos == -1) {
+        for (int i = 0; i < this.cont; i++) {
             if (registos[i].getSSN().equals(ssn)) {
                 pos = i;
             }
-            i++;
         }
         return pos;
     }
     
     @Override
     public boolean add(Registration registration) {
+        int pos = find(registration.getSSN());
+        
         if (registration == null) return false;
         
         if (cont >= MAX) return false;
         
-        for (int i = 0; i < this.cont; i++) {
-            if (registos[i].getSSN().equals(registration.getSSN())) {
-                return false;
-            }
-        }
+        if (pos != -1) return false;
         
         registos[cont++] = registration;
-        registration.setStatus(RegistrationStatus.IN_SCREENING);
         return true;
     }
 
@@ -75,11 +76,9 @@ public class WaitingRoomManagement implements waiting_room.WaitingRoom{
     public boolean remove(Registration registration) {
         int pos = find(registration.getSSN());
         
-        if (pos != -1) {
-            for (int i = 0; i < this.cont; i++) {
-                if (registos[i].getStatus().equals(RegistrationStatus.COMPLETE)) {
-                    registos[i] = registos[i+1];
-                }             
+        if (pos != -1 && registration.getStatus().equals(RegistrationStatus.COMPLETE)) {
+            for (int i = pos; i < this.cont; i++) {
+                registos[i] = registos[i+1];         
             }
             registos[--cont] = null;
         }
@@ -102,7 +101,7 @@ public class WaitingRoomManagement implements waiting_room.WaitingRoom{
             }          
         }
         
-        System.out.print("Nº de registos com o status " + registrationStatus.name() + ": ");
+        System.out.print("Nº de registos com o status " + registrationStatus.name() + ": " + count + "\n");
         return count;
     }
 
@@ -116,4 +115,25 @@ public class WaitingRoomManagement implements waiting_room.WaitingRoom{
             System.out.println(registos[i].toString());
         }
     } 
+    
+    /**
+     * Método que permite alterar o nome através do SSN
+     * @param ssn 
+     * @param name
+     * @return 
+     */
+    public boolean editName(String ssn, String name) {
+        boolean tmp = false;
+        
+        for (int i = 0; i < this.cont; i++) {
+            if (registos[i].getSSN().equals(ssn)) {
+                registos[i].setName(name);
+                tmp = true;
+            } else {
+                tmp = false;
+            }
+        }
+        
+        return tmp;
+    }
 }

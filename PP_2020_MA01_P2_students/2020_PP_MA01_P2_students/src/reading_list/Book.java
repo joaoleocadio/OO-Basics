@@ -53,14 +53,7 @@ public abstract class Book {
         this.setTitle(title);
         this.setStatus(status);
     }  
-   
-    public Book(String isbn, String title) {
-        this.isbn = isbn;
-        this.title = title;
-        this.setStatus(status.WANT_TO_READ);
-    }
-    
-    
+        
     /**
      * Sets the attribute {@link Book#isbn ISBN}
      *

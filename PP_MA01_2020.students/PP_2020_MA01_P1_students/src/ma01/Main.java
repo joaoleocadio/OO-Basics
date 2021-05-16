@@ -30,20 +30,23 @@ public class Main {
     public static void main(String[] args) {
         waiting_room.WaitingRoomManagement lista = new WaitingRoomManagement();
         
-        concretRegistration c1 = new concretRegistration("1111", "João", RegistrationStatus.IN_SCREENING);
-        concretRegistration c2 = new concretRegistration("123", "José", RegistrationStatus.IN_ATTENDANCE);
-        concretRegistration c3 = new concretRegistration("234", "Ricardo", RegistrationStatus.IN_ATTENDANCE);
+        concretRegistration c1 = new concretRegistration("1111", "João");
+        concretRegistration c2 = new concretRegistration("123", "José");
+        concretRegistration c3 = new concretRegistration("234", "Ricardo");
+        concretRegistration c4 = new concretRegistration("123", "dfsv");
         
         lista.add(c1);
         lista.add(c2);
         lista.add(c3);
+        lista.add(c4);
+        c2.changeRegistrationStatus();
+        c2.changeRegistrationStatus();
         
-        c1.changeRegistrationStatus();
-        c1.changeRegistrationStatus();
-        System.out.println(lista.getRegistration("1111"));
-        lista.remove(c1);
+        //lista.editName("1111", "Jorge Moreira");
+        lista.remove(c2);
+        //lista.editName("1111", "Zé");
+        //System.out.println(lista.getRegistration("1111"));
         lista.printAll();
-        //lista.printAll();
         
     }
 

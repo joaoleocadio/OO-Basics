@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"waiting_room","l":"concretRegistration"},{"p":"ma01","l":"Main"},{"p":"waiting_room","l":"Registration"},{"p":"waiting_room","l":"RegistrationStatus"},{"p":"waiting_room","l":"WaitingRoom"},{"p":"waiting_room","l":"WaitingRoomManagement"}]

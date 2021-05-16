@@ -11,16 +11,10 @@ public class concretBook extends Book{
      * @param isbn
      * @param title 
      */
-    public concretBook(String isbn, String title, BookStatus status) {    
-        super(isbn, title, status);
-    }
-
-    public concretBook(String isbn, String title) {
-        super(isbn, title);
+    public concretBook(String isbn, String title) {    
+        super(isbn, title, BookStatus.WANT_TO_READ);
     }
     
-    
-
     /**
      * Método equals para comparação de objetos
      * @param obj
@@ -28,6 +22,8 @@ public class concretBook extends Book{
      */
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) return true;
+        
         if (obj == null) return false;
         
         if (!(obj instanceof concretBook)) return false;

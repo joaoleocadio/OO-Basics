@@ -33,14 +33,13 @@ public class Main {
         concretBook b1 = new concretBook("qw1", "Harry Potter e a pedra filosofal");
         concretBook b2 = new concretBook("ert2", "Harry Potter e a camara secreta");
         concretBook b3 = new concretBook("zxc3", "Harry Potter e o prisoneiro de Azkaban");
-        concretBook b4 = new concretBook("fbd", "gfopk", BookStatus.READ);
         
         lista.add(b1);
         lista.add(b2);
         lista.add(b3);
         lista.changeStatus("qw1", BookStatus.READ);
+        lista.remove("qw1");
         lista.printAll();
-        
+        lista.getNumberOfBooks();
     }
-
 }

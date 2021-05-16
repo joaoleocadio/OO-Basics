@@ -12,8 +12,8 @@ public class concretRegistration extends Registration{
      * @param name
      * @param registrationStatus
      */
-    public concretRegistration(String ssn, String name, RegistrationStatus registrationStatus) {
-        super(ssn, name, registrationStatus);
+    public concretRegistration(String ssn, String name) {
+        super(ssn, name, RegistrationStatus.IN_SCREENING);
     }
 
     /**
@@ -36,6 +36,8 @@ public class concretRegistration extends Registration{
      */
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) return true;
+        
         if (obj == null) return false;
         
         if (!(obj instanceof concretRegistration)) return false;
@@ -65,6 +67,5 @@ public class concretRegistration extends Registration{
         text += "SSN: " + this.getSSN() + "\n" + "Name: " + this.getName()+ "\n" + "Status: " + this.getStatus() + "\n";
         
         return text;
-    }
-    
+    } 
 }
